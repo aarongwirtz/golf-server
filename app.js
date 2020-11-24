@@ -8,7 +8,8 @@ const controllers = require('./controllers');
 
 app.use(express.json())
 
-db.sync(); // {force: true}
+db.sync();
+// {force: true} -- this "drops" the table
 
 app.use("/scorecard", controllers.scorecardcontroller)
 
