@@ -10,12 +10,12 @@ router.get('/golflove', (req, res) => {
 router.get('/', (req,res) => {
     Scorecard.findAll()
     .then(scorecard => res.status(200).json(scorecard))
-    .catch(err => res,status(500).json({
+    .catch(err => res.status(500).json({
         error: err
     }))
 })
 //get all of 1 user's scorecards
-router.get('/:username', (req,res) => {
+router.get('/:userName', (req,res) => {
     Scorecard.findAll({ where: {userName: req.params.userName}})
         .then(scorecard => res.status(200).json(scorecard))
         .catch(err => res.status(500).json({ error: err}))
