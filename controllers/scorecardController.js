@@ -66,7 +66,3 @@ router.delete('/:id', (req,res) => {
 })
 
 module.exports = router
-
-Get all users scorecards, GET
-Create personal scorecard, POST
-
