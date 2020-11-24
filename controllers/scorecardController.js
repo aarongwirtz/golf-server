@@ -15,7 +15,7 @@ router.get('/', (req,res) => {
     }))
 })
 //get all of 1 user's scorecards
-router.get('/:username', (req,res) => {
+router.get('/:userName', (req,res) => {
     Scorecard.findAll({ where: {userName: req.params.userName}})
         .then(scorecard => res.status(200).json(scorecard))
         .catch(err => res.status(500).json({ error: err}))
