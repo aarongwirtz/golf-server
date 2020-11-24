@@ -26,7 +26,7 @@ router.post('/create', async (req,res) => {
     try{
         const {userName, courseName, date, conditions, courseLength, difficultyRating, h1Score, h2Score, h3Score, h4Score, h5Score, h6Score, h7Score, h8Score, h9Score, h10Score, h11Score, h12Score, h13Score, h14Score, h15Score, h16Score, h17Score, h18Score, totalScore, h1Par, h2Par, h3Par, h4Par, h5Par, h6Par, h7Par, h8Par, h9Par, h10Par, h11Par, h12Par, h13Par, h14Par, h15Par, h16Par, h17Par, h18Par, totalPar} = req.body;
 
-        let newScore = await Scorecard.create({userName, courseName, date, conditions, courseLength, difficultyRating, h1Score, h2Score, h3Score, h4Score, h5Score, h6Score, h7Score, h8Score, h9Score, h10Score, h11Score, h12Score, h13Score, h14Score, h15Score, h16Score, h17Score, h18Score, totalScore, h1Par, h2Par, h3Par, h4Par, h5Par, h6Par, h7Par, h8Par, h9Par, h10Par, h11Par, h12Par, h13Par, h14Par, h15Par, h16Par, h17Par, h18Par, totalPar
+        let newScore = await Scorecard.create({userName: req.user.username, courseName, date, conditions, courseLength, difficultyRating, h1Score, h2Score, h3Score, h4Score, h5Score, h6Score, h7Score, h8Score, h9Score, h10Score, h11Score, h12Score, h13Score, h14Score, h15Score, h16Score, h17Score, h18Score, totalScore, h1Par, h2Par, h3Par, h4Par, h5Par, h6Par, h7Par, h8Par, h9Par, h10Par, h11Par, h12Par, h13Par, h14Par, h15Par, h16Par, h17Par, h18Par, totalPar
         })
         res.status(200).json({
             score: newScore,
