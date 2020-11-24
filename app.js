@@ -8,8 +8,9 @@ const controllers = require('./controllers');
 
 app.use(express.json())
 
-db.sync();
+db.sync(); // {force: true}
 
+app.use("/scorecard", controllers.scorecardcontroller)
 
 app.listen(3000, function() {
     console.log('App listening on port 3000!');
