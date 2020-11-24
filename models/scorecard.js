@@ -1,7 +1,8 @@
 const {DataTypes} = require('sequelize');
 const db = require('../db');
 
-const Scores = db.define('scores', {
+
+const Scorecard = db.define('scorecard', {
     userName: {
         type: DataTypes.STRING,
         allowNull: false
@@ -10,9 +11,13 @@ const Scores = db.define('scores', {
         type: DataTypes.STRING,
         allowNull: false
     },
-    date: {
+     date: {
         type: DataTypes.DATEONLY,
-        alllowNull: false
+        allowNull: false
+    },
+    conditions: {
+        type: DataTypes.STRING,
+        allowNull: false
     },
     courseLength: {
         type: DataTypes.STRING,
@@ -99,6 +104,99 @@ const Scores = db.define('scores', {
         type: DataTypes.INTEGER,
         allowNull: false
     },
-})
+    h1Par: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
 
-module.exports = Scores
+    h2Par: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
+
+    h3Par: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
+
+    h4Par: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
+
+    h5Par: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
+
+    h6Par: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
+
+    h7Par: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
+
+    h8Par: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
+
+    h9Par: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
+
+    h10Par: {
+        type: DataTypes.INTEGER,
+        allowNull: true
+    },
+
+    h11Par: {
+        type: DataTypes.INTEGER,
+        allowNull: true
+    },
+
+    h12Par: {
+        type: DataTypes.INTEGER,
+        allowNull: true
+    },
+
+    h13Par: {
+        type: DataTypes.INTEGER,
+        allowNull: true
+    },
+
+    h14Par: {
+        type: DataTypes.INTEGER,
+        allowNull: true
+    },
+
+    h15Par: {
+        type: DataTypes.INTEGER,
+        allowNull: true
+    },
+
+    h16Par: {
+        type: DataTypes.INTEGER,
+        allowNull: true
+    },
+
+    h17Par: {
+        type: DataTypes.INTEGER,
+        allowNull: true
+    },
+
+    h18Par: {
+        type: DataTypes.INTEGER,
+        allowNull: true
+    },
+    totalPar: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
+});
+
+module.exports = Scorecard
