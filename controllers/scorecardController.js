@@ -10,7 +10,7 @@ router.get('/golflove', (req, res) => {
 router.get('/', (req,res) => {
     Scorecard.findAll()
     .then(scorecard => res.status(200).json(scorecard))
-    .catch(err => res,status(500).json({
+    .catch(err => res.status(500).json({
         error: err
     }))
 })
