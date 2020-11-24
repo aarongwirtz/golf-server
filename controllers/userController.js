@@ -12,6 +12,8 @@ router.post('/register', function(req,res) {
     })
     .then(
         function userRegistered(user) {
+            
+
             res.json({
                 user: user
             });
