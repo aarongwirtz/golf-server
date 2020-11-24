@@ -1,3 +1,3 @@
 const Scorecard = require('./scorecard');
-
-module.exports = {Scorecard}
+const User = require('./user');
+module.exports = {Scorecard, User};
