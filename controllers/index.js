@@ -1,3 +1,4 @@
 module.exports = {
-    scorecardcontroller: require('./scorecardController') 
+    scorecardcontroller: require('./scorecardController'),
+    usercontroller: require('./userController'),
 }

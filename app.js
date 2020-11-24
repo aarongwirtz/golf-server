@@ -10,6 +10,7 @@ app.use(express.json())
 
 db.sync();
 
+app.use('/user', controllers.usercontroller);
 
 app.listen(3000, function() {
     console.log('App listening on port 3000!');
