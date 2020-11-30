@@ -15,7 +15,7 @@ db.sync();
 app.use("/scorecard", controllers.scorecardcontroller)
 app.use('/user', controllers.usercontroller);
 
-app.listen(3000, function() {
+app.listen(process.env.PORT, () => {
     console.log(`App listening on ${process.env.PORT}`);
 })
 
