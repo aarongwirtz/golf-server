@@ -16,5 +16,7 @@ app.use("/scorecard", controllers.scorecardcontroller)
 app.use('/user', controllers.usercontroller);
 
 app.listen(3000, function() {
-    console.log('App listening on port 3000!');
+    console.log(`App listening on ${process.env.PORT}`);
 })
+
+//App listening on port 3000
