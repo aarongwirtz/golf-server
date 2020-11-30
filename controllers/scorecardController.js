@@ -17,7 +17,7 @@ router.get('/', validateSession, (req,res) => {
     }))
 })
 //get all of 1 user's scorecards
-router.get('/:userName', validateSession, (req,res) => {
+router.get('/user/:userName', validateSession, (req,res) => {
     Scorecard.findAll({ where: {userName: req.params.userName}})
         .then(scorecard => res.status(200).json(scorecard))
         .catch(err => res.status(500).json({ error: err}))
