@@ -13,6 +13,7 @@ app.use(express.json())
 app.use("/scorecard", controllers.scorecardcontroller)
 app.use('/user', controllers.usercontroller);
 
+<<<<<<< HEAD
 
 db.authenticate()
 .then(() => db.sync()) // => {force:true}
@@ -23,3 +24,10 @@ db.authenticate()
         console.log("[server:] Server Crashed");
         console.error(err);
     })
+=======
+app.listen(3000, function() {
+    console.log(`App listening on ${process.env.PORT}`);
+})
+
+//App listening on port 3000
+>>>>>>> 781a5e5ffb87b1efbd91ef3f35d7107553a3033f
