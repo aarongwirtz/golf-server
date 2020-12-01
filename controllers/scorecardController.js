@@ -16,8 +16,17 @@ router.get('/', validateSession, (req,res) => {
         error: err
     }))
 })
-//get all of 1 user's scorecards
 
+router.get('/mine', validateSession, (req, res) => {
+    let username = req.user.username
+    Scorecard.findAll({
+        where: {userName: username}
+    })
+    .then(scorecard => res.status(200).json(scorecard))
+    .catch(err => res.status(500).json({ error: err}))
+})
+
+//get all of 1 user's scorecards
 router.get('/:userName', validateSession,(req,res) => { //DONT FORGET TO ADD VALIDATE BACK
     Scorecard.findAll({ where: {userName: req.params.userName}})
         .then(scorecard => res.status(200).json(scorecard))

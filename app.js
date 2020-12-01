@@ -14,7 +14,6 @@ app.use("/scorecard", controllers.scorecardcontroller)
 app.use('/user', controllers.usercontroller);
 
 
-
 db.authenticate()
 .then(() => db.sync()) // => {force:true}
 .then(() => {
@@ -23,4 +22,6 @@ db.authenticate()
     .catch((err) => {
         console.log("[server:] Server Crashed");
         console.error(err);
+
     })
+
