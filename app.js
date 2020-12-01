@@ -14,7 +14,6 @@ app.use("/scorecard", controllers.scorecardcontroller)
 app.use('/user', controllers.usercontroller);
 
 
-
 db.authenticate()
 .then(() => db.sync()) // => {force:true}
 .then(() => {
