@@ -9,12 +9,17 @@ const controllers = require('./controllers');
 
 app.use(express.json())
 
-db.sync();
-//{force: true} -- this "drops" the table
 
 app.use("/scorecard", controllers.scorecardcontroller)
 app.use('/user', controllers.usercontroller);
 
-app.listen(3000, function() {
-    console.log('App listening on port 3000!');
-})
+
+db.authenticate()
+.then(() => db.sync()) // => {force:true}
+.then(() => {
+    app.listen(process.env.PORT, () => console.log(`[Server:] App is listening on Port ${process.env.PORT}`));
+    })
+    .catch((err) => {
+        console.log("[server:] Server Crashed");
+        console.error(err);
+    })
