@@ -9,7 +9,6 @@ const controllers = require('./controllers');
 
 app.use(express.json())
 
-
 app.use("/scorecard", controllers.scorecardcontroller)
 app.use('/user', controllers.usercontroller);
 
